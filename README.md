@@ -1,11 +1,11 @@
-ZendSkeletonApplication
+Fly CMS Application
 =======================
 
 Introduction
 ------------
 This is a simple, skeleton application using the ZF2 MVC layer and module
 systems. This application is meant to be used as a starting place for those
-looking to get their feet wet with ZF2.
+looking to get their feet wet with Fly CMS.
 
 
 Installation
@@ -23,8 +23,8 @@ Alternately, clone the repository and manually invoke `composer` using the shipp
 `composer.phar`:
 
     cd my/project/dir
-    git clone git://github.com/zendframework/ZendSkeletonApplication.git
-    cd ZendSkeletonApplication
+    git clone git://github.com/esserj/FlyCmsApplication.git
+    cd FlyCmsApplication
     php composer.phar self-update
     php composer.phar install
 
@@ -35,7 +35,7 @@ Another alternative for downloading the project is to grab it via `curl`, and
 then pass it to `tar`:
 
     cd my/project/dir
-    curl -#L https://github.com/zendframework/ZendSkeletonApplication/tarball/master | tar xz --strip-components=1
+    curl -#L https://github.com/esserj/FlyCmsApplication/tarball/master | tar xz --strip-components=1
 
 You would then invoke `composer` to install dependencies per the previous
 example.
@@ -44,7 +44,7 @@ Using Git submodules
 --------------------
 Alternatively, you can install using native git submodules:
 
-    git clone git://github.com/zendframework/ZendSkeletonApplication.git --recursive
+    git clone git://github.com/esserj/FlyCmsApplication.git --recursive
 
 Virtual Host
 ------------
