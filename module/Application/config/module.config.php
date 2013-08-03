@@ -9,6 +9,8 @@
 
 return array(
     'router' => array(
+        // add support for translatable routes
+        'router_class' => 'Zend\MVC\Router\Http\TranslatorAwareTreeRouteStack',
         'routes' => array(
             'home' => array(
                 'type' => 'Zend\Mvc\Router\Http\Literal',
