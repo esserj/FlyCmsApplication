@@ -98,5 +98,5 @@ return array(
             'routes' => array(
             ),
         ),
-    ),
+    )
 );
