@@ -2,9 +2,9 @@
 return array(
     // This should be an array of module namespaces used in the application.
     'modules' => array(
-        // base configuration must be adjustable, so load external modules before internal modules
+        // base configuration may need to be adjustable, so load external modules before internal modules
         'ZfcTwig',
-
+        'FlyCMS',
         // internal modules
         'Application',
     ),
