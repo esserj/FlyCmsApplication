@@ -1,0 +1,28 @@
+{% if is_a(exception, 'Exception') %}
+    <hr/>
+    {% if not hasPreviousExceptions %}
+        <h2>{{ translate('Additional information') }}:</h2>
+    {% else %}
+        <h2>{{ translate('Previous exceptions') }}:</h2>
+    {% endif %}
+
+    <h3>{{ exception|get_class }}</h3>
+    <dl>
+        <dt>{{ translate('File') }}:</dt>
+        <dd>
+            <pre class="prettyprint linenums">{{ exception.getFile() }}: {{ exception.getLine() }}</pre>
+        </dd>
+        <dt>{{ translate('Message') }}:</dt>
+        <dd>
+            <pre class="prettyprint linenums">{{ exception.getMessage() }}</pre>
+        </dd>
+        <dt>{{ translate('Stack trace') }}:</dt>
+        <dd>
+            <pre class="prettyprint linenums">{{ exception.getTraceAsString() }}</pre>
+        </dd>
+    </dl>
+    {% include 'error/includes/exception-info.twig' with {'exception': exception.getPrevious(), 'hasPreviousExceptions': true} %}
+{%  elseif not hasPeviousExceptions %}
+    <h3>{{ translate('No Exception available') }}</h3>
+{%  endif %}
+
