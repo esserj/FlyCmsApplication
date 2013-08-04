@@ -10,7 +10,10 @@
  * control, so do not include passwords or other sensitive information in this
  * file.
  */
-
+/**
+ * FlyCMSApplication global config overrides
+ * should be entered here
+ */
 return array(
     // ...
 );

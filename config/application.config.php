@@ -2,10 +2,16 @@
 return array(
     // This should be an array of module namespaces used in the application.
     'modules' => array(
-        // base configuration may need to be adjustable, so load external modules before internal modules
+        // Load external modules before internal modules
+        'DoctrineModule',
+        'DoctrineORMModule',
+        'ZfcBase',
+        'ZfcRbac',
+        'ZfcUser',
         'ZfcTwig',
+        // Leave as last external module to allow FlyCMS config overrides in dependency configs
         'FlyCMS',
-        // internal modules
+        // Internal modules, these are the none-vendor modules
         'Application',
     ),
 
