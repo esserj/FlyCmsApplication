@@ -1,0 +1,8 @@
+<h1>{{ translate('An error occurred') }}</h1>
+<h2>{{ message }}</h2>
+
+{% if display_exceptions %}
+
+    {% include 'error/includes/exception-info.twig' with {'exception': exception} %}
+    
+{% endif %}
