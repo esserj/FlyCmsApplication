@@ -8,6 +8,7 @@ return array(
         'ZfcBase',
         'ZfcRbac',
         'ZfcUser',
+        'ZfcUserDoctrineORM',
         'ZfcTwig',
         // Leave as last external module to allow FlyCMS config overrides in dependency configs
         'FlyCMS',

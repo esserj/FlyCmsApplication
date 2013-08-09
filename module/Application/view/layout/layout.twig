@@ -36,6 +36,16 @@
                 <ul class="nav">
                     <li class="active"><a href="{{ url('home') }}">{{ translate('Home') }}</a></li>
                 </ul>
+                <ul class="nav pull-right">
+                    <li><a href="/user/register/">Sign Up</a></li>
+                    <li class="divider-vertical"></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" href="#" data-toggle="dropdown">Sign In <strong class="caret"></strong></a>
+                        <div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
+                            {{ zfcUserLoginWidget() }}
+                        </div>
+                    </li>
+                </ul>
             </div><!--/.nav-collapse -->
         </div>
     </div>

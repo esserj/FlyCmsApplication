@@ -38,7 +38,10 @@ return array(
                 )
             ),
         ),
-        'identity_provider' => 'standard_identity'
+        /**
+         * have identities provided by zfc-user module
+         */
+        'identity_provider' => 'zfcuser_auth_service'
     ),
     'service_manager' => array(
         'factories' => array(
