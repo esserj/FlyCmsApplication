@@ -31,20 +31,27 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </a>
-            <a class="brand" href="{{ url('home') }}">{{ translate('Skeleton Application') }}</a>
+            <a class="brand logo" href="{{ url('home') }}">{{ translate('Skeleton Application') }}</a>
             <div class="nav-collapse collapse">
                 <ul class="nav">
                     <li class="active"><a href="{{ url('home') }}">{{ translate('Home') }}</a></li>
                 </ul>
-                <ul class="nav pull-right">
-                    <li><a href="/user/register/">Sign Up</a></li>
-                    <li class="divider-vertical"></li>
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" href="#" data-toggle="dropdown">Sign In <strong class="caret"></strong></a>
-                        <div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
-                            {{ zfcUserLoginWidget() }}
-                        </div>
-                    </li>
+                <ul class="nav pull-right navbar-text">
+                    {% set userIdentity = zfcUserIdentity() %}
+                    {% if userIdentity %}
+                        <li><a class="gravatar" href="/user">{{ gravatar(userIdentity.getEmail(), {img_size:32}) }}{{ zfcUserDisplayName()|capitalize }}</a></li>
+                        <li class="divider-vertical"></li>
+                        <li><a href="/user/logout">{{ translate('Sign Out') }}</a></li>
+                    {% else %}
+                        <li><a href="/user/register">{{ translate('Sign Up') }}</a></li>
+                        <li class="divider-vertical"></li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" href="#" data-toggle="dropdown">{{ translate('Sign In') }} <strong class="caret"></strong></a>
+                            <div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
+                                {{ zfcUserLoginWidget() }}
+                            </div>
+                        </li>
+                    {% endif %}
                 </ul>
             </div><!--/.nav-collapse -->
         </div>
